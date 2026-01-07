@@ -1,0 +1,6 @@
+/* Keep theming minimal - only accent color */
+:root {
+  --sl-color-accent: #00bfff;
+  --sl-color-accent-low: #003d5c;
+  --sl-color-accent-high: #80dfff;
+}
