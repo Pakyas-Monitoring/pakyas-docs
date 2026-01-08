@@ -1,49 +1,46 @@
-# Starlight Starter Kit: Basics
+# Pakyas Documentation
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+Documentation for [Pakyas](https://pakyas.com) - cron job monitoring that tells you when your scheduled tasks fail, miss their schedule, or run too long.
 
+## About Pakyas
+
+Pakyas goes beyond simple up/down monitoring by tracking:
+- Start, success, and failure status
+- Exit codes and error output
+- Runtime duration
+- Schedule adherence
+
+## Development
+
+This documentation site is built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.build).
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
 ```
-npm create astro@latest -- --template starlight
+
+The site will be available at `http://localhost:4321`.
+
+### Build
+
+```bash
+npm run build
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Contributing
 
-## 🚀 Project Structure
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this documentation.
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+## License
 
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
-```
-
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
-
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
-
-Static assets, like favicons, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+This documentation is licensed under the [MIT License](LICENSE).
