@@ -45,6 +45,7 @@ export default defineConfig({
 						{ label: 'CircleCI', link: '/environments/circleci/' },
 						{ label: 'Docker', link: '/environments/docker/' },
 						{ label: 'Kubernetes', link: '/environments/kubernetes/' },
+						{ label: 'Nagios', link: '/environments/nagios/' },
 					],
 				},
 				{

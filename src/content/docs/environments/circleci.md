@@ -48,12 +48,12 @@ CircleCI's `when: always` attribute is useful for ensuring final pings send.
 
 ```yaml
 steps:
-  - run: pakyas ping my-job --start
+  - run: pakyas ping nightly-build --start
   - run: ./hazardous-script.sh
   - run:
       when: on_success
-      command: pakyas ping my-job
+      command: pakyas ping nightly-build
   - run:
       when: on_fail
-      command: pakyas ping my-job --fail
+      command: pakyas ping nightly-build --fail
 ```

@@ -30,7 +30,7 @@ spec:
           - name: etl
             image: my-org/etl:latest
             # Override command to wrap with Pakyas
-            command: ["pakyas", "monitor", "k8s-etl", "--", "/app/run_etl.sh"]
+            command: ["pakyas", "monitor", "nightly-etl", "--", "/app/run_etl.sh"]
             env:
               - name: PAKYAS_API_KEY
                 valueFrom:

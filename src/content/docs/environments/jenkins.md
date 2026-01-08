@@ -1,7 +1,10 @@
 ---
-title: Jenkins
-description: Monitor Jenkins pipelines with Pakyas
+title: Jenkins (Scheduled Pipelines)
+description: Monitor scheduled Jenkins pipelines with Pakyas
 ---
+
+> Pakyas requires an expected schedule. Use this integration for Jenkins jobs
+> triggered by cron or timers (e.g., nightly builds, periodic tests).
 
 ## Setup
 
@@ -16,6 +19,9 @@ Go to Manage Jenkins > Credentials > System > Global credentials.
 ```groovy
 pipeline {
     agent any
+    triggers {
+        cron('H 2 * * *')  // nightly at ~2 AM
+    }
     environment {
         PAKYAS_API_KEY = credentials('PAKYAS_API_KEY')
     }
@@ -27,7 +33,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'pakyas monitor jenkins-build -- ./gradlew build'
+                sh 'pakyas monitor nightly-build -- ./gradlew build'
             }
         }
     }
@@ -41,23 +47,26 @@ If you prefer `curl` or want to handle notifications in the `post` block:
 ```groovy
 pipeline {
     agent any
+    triggers {
+        cron('H 2 * * *')  // nightly at ~2 AM
+    }
     environment {
         PAKYAS_API_KEY = credentials('PAKYAS_API_KEY')
     }
     stages {
         stage('Work') {
             steps {
-                sh 'pakyas ping my-job --start'
+                sh 'pakyas ping nightly-build --start'
                 sh './do-work.sh'
             }
         }
     }
     post {
         success {
-            sh 'pakyas ping my-job'
+            sh 'pakyas ping nightly-build'
         }
         failure {
-            sh 'pakyas ping my-job --fail'
+            sh 'pakyas ping nightly-build --fail'
         }
     }
 }

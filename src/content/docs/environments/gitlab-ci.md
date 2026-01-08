@@ -34,15 +34,17 @@ nightly-job:
 To ensure pings are sent even if the script crashes, you can use `after_script`, but keep in mind `after_script` runs in a separate shell context, so local variables won't persist.
 
 ```yaml
-job_name:
+nightly-job:
   script:
-    - pakyas ping my-job --start
+    - pakyas ping nightly-build --start
     - ./hazardous-script.sh
+  only:
+    - schedules
   after_script:
     - |
       if [ "$CI_JOB_STATUS" == "success" ]; then
-        pakyas ping my-job
+        pakyas ping nightly-build
       else
-        pakyas ping my-job --fail
+        pakyas ping nightly-build --fail
       fi
 ```
