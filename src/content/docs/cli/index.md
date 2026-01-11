@@ -20,7 +20,7 @@ curl -fsSL https://pakyas.com/install.sh | bash
 
 ### Manual Installation
 
-Download the binary for your platform from the [releases page](https://github.com/nickthecoder/pakyas/releases) and add it to your PATH.
+Download the binary for your platform from the [releases page](https://github.com/pakyas-monitoring/pakyas-cli/releases) and add it to your PATH.
 
 ### Verify Installation
 

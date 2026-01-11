@@ -17,13 +17,13 @@ export default defineConfig({
             },
             editLink: {
                 baseUrl:
-                    "https://github.com/nickthecoder/pakyas/edit/main/docs/src/content/docs/",
+                    "https://github.com/pakyas-monitoring/pakyas-docs/edit/main/src/content/docs/",
             },
             social: [
                 {
                     icon: "github",
                     label: "GitHub",
-                    href: "https://github.com/nickthecoder/pakyas",
+                    href: "https://github.com/pakyas-monitoring",
                 },
             ],
             customCss: ["./src/styles/custom.css"],
