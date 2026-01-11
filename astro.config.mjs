@@ -5,7 +5,8 @@ import mermaid from "astro-mermaid";
 
 // https://astro.build/config
 export default defineConfig({
-    site: process.env.PUBLIC_SITE_URL || "https://docs.pakyas.com",
+    site: process.env.PUBLIC_SITE_URL || "https://pakyas.com",
+    base: "/docs",
     output: "static",
     integrations: [
         mermaid(), // Must be before starlight
