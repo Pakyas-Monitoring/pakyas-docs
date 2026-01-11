@@ -16,6 +16,29 @@ export default defineConfig({
             logo: {
                 src: "./src/assets/pakyas-logo.svg",
             },
+            head: [
+                {
+                    tag: "meta",
+                    attrs: {
+                        property: "og:image",
+                        content: "/docs/social-card-documentation.png",
+                    },
+                },
+                {
+                    tag: "meta",
+                    attrs: {
+                        name: "twitter:image",
+                        content: "/docs/social-card-documentation.png",
+                    },
+                },
+                {
+                    tag: "meta",
+                    attrs: {
+                        name: "twitter:card",
+                        content: "summary_large_image",
+                    },
+                },
+            ],
             editLink: {
                 baseUrl:
                     "https://github.com/pakyas-monitoring/pakyas-docs/edit/main/src/content/docs/",
