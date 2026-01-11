@@ -8,6 +8,7 @@ export default defineConfig({
     site: process.env.PUBLIC_SITE_URL || "https://pakyas.com",
     base: "/docs",
     output: "static",
+    trailingSlash: "always",
     integrations: [
         mermaid(), // Must be before starlight
         starlight({
