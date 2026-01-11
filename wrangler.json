@@ -1,10 +1,12 @@
 {
   "name": "pakyas-docs",
   "compatibility_date": "2026-01-08",
+  "main": "src/worker.js",
   "routes": [
     { "pattern": "pakyas.com/docs*", "zone_name": "pakyas.com" }
   ],
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
+    "binding": "ASSETS"
   }
 }
