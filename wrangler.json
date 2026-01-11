@@ -1,6 +1,9 @@
 {
   "name": "pakyas-docs",
   "compatibility_date": "2026-01-08",
+  "routes": [
+    { "pattern": "pakyas.com/docs*", "zone_name": "pakyas.com" }
+  ],
   "assets": {
     "directory": "./dist"
   }
