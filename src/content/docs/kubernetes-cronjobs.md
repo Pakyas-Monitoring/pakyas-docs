@@ -24,7 +24,7 @@ Create the secret:
 kubectl create secret generic pakyas-credentials --from-literal=api-key=pk_live_xxxxx
 ```
 
-See [Environment Variables](/config/env-vars/) for all options.
+See [Environment Variables](./config/env-vars/) for all options.
 
 ## When to use this
 

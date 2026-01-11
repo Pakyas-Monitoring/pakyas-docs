@@ -57,6 +57,6 @@ sudo pakyas update
 
 ## See Also
 
-- [Installation](/cli/) - Initial CLI installation
-- [ping Command](/cli/ping/) - Send pings to checks
-- [monitor Command](/cli/monitor/) - Wrap commands with monitoring
+- [Installation](../cli/) - Initial CLI installation
+- [ping Command](./ping/) - Send pings to checks
+- [monitor Command](./monitor/) - Wrap commands with monitoring

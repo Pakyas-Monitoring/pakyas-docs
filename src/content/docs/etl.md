@@ -26,7 +26,7 @@ Or source from a file:
 0 0 * * * . ~/.pakyas_env && pakyas monitor etl-pipeline -- python /jobs/data_pipeline.py
 ```
 
-See [Environment Variables](/config/env-vars/) for all options.
+See [Environment Variables](./config/env-vars/) for all options.
 
 ## When to use this
 

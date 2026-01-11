@@ -110,6 +110,6 @@ This automatically:
 
 ## Next Steps
 
-- [CLI Reference](/cli/) - Full command reference
-- [API Reference](/api/) - Direct HTTP integration
-- [External Monitors](/cli/external-monitors/) - Migrate from healthchecks.io or Cronitor
+- [CLI Reference](./cli/) - Full command reference
+- [API Reference](./api/) - Direct HTTP integration
+- [External Monitors](./cli/external-monitors/) - Migrate from healthchecks.io or Cronitor

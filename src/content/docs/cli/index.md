@@ -211,7 +211,7 @@ Exit code 3 indicates Pakyas itself failed (network error, auth issue, etc.). Th
 
 ## Next Steps
 
-- [monitor command](/cli/monitor/) - Detailed monitor usage
-- [ping command](/cli/ping/) - Manual ping sending
-- [update command](/cli/update/) - Self-update the CLI
-- [External Monitors](/cli/external-monitors/) - Migration from other services
+- [monitor command](./monitor/) - Detailed monitor usage
+- [ping command](./ping/) - Manual ping sending
+- [update command](./update/) - Self-update the CLI
+- [External Monitors](./external-monitors/) - Migration from other services

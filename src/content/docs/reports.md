@@ -26,7 +26,7 @@ Or source from a file:
 0 6 * * 1 . ~/.pakyas_env && pakyas monitor weekly-report -- ruby /scripts/weekly_report.rb
 ```
 
-See [Environment Variables](/config/env-vars/) for all options.
+See [Environment Variables](./config/env-vars/) for all options.
 
 ## When to use this
 

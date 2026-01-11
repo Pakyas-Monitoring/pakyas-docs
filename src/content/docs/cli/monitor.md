@@ -48,5 +48,5 @@ The command exits with:
 
 ## See Also
 
-- [External Monitors](/cli/external-monitors/) - Migration from other services
-- [ping Command](/cli/ping/) - Manual ping sending
+- [External Monitors](./external-monitors/) - Migration from other services
+- [ping Command](./ping/) - Manual ping sending

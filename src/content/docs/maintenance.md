@@ -26,7 +26,7 @@ Or source from a file:
 0 4 * * * . ~/.pakyas_env && pakyas monitor cleanup-task -- /scripts/cleanup.sh
 ```
 
-See [Environment Variables](/config/env-vars/) for all options.
+See [Environment Variables](./config/env-vars/) for all options.
 
 ## When to use this
 

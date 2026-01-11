@@ -54,7 +54,7 @@ The container itself must be triggered on a schedule. Common approaches:
 ### Using systemd timer
 
 Create a timer unit that triggers `docker run` at the desired interval.
-See the [Linux](/docs/environments/linux) guide for systemd timer examples.
+See the [Linux](./linux/) guide for systemd timer examples.
 
 ## Docker Compose
 

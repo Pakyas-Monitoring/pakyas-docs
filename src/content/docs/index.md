@@ -37,6 +37,6 @@ When something goes wrong, Pakyas sends **alerts** via:
 
 ## Next Steps
 
-- [Getting Started](/getting-started/) - Set up your first check in 5 minutes
-- [CLI Reference](/cli/) - Install and use the pakyas CLI
-- [API Reference](/api/) - Direct HTTP API integration
+- [Getting Started](./getting-started/) - Set up your first check in 5 minutes
+- [CLI Reference](./cli/) - Install and use the pakyas CLI
+- [API Reference](./api/) - Direct HTTP API integration

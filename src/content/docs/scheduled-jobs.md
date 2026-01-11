@@ -26,7 +26,7 @@ Or source from a file:
 0 2 * * * . ~/.pakyas_env && pakyas monitor nightly-job -- /path/to/script.sh
 ```
 
-See [Environment Variables](/config/env-vars/) for all options.
+See [Environment Variables](./config/env-vars/) for all options.
 
 ## When to use this
 

@@ -67,5 +67,5 @@ fi
 
 ## See Also
 
-- [monitor Command](/cli/monitor/) - Automatic ping wrapper
-- [API Ping Endpoint](/api/ping/) - Direct HTTP pings
+- [monitor Command](./monitor/) - Automatic ping wrapper
+- [API Ping Endpoint](../api/ping/) - Direct HTTP pings

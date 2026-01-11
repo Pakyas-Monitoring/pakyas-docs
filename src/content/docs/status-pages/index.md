@@ -201,13 +201,13 @@ If custom CSS breaks your page, use the **Disable Custom CSS** toggle to immedia
 
 Status pages expose multiple endpoints for external tool integration:
 
-- [**RSS Feed**](/status-pages/integrations/#rss-feed) - Subscribe to incidents in any RSS reader
-- [**JSON API**](/status-pages/integrations/#json-api) - Statuspage.io-compatible JSON endpoint
-- [**Status Badge**](/status-pages/integrations/#status-badge) - Embeddable SVG badge for your README
+- [**RSS Feed**](./integrations/#rss-feed) - Subscribe to incidents in any RSS reader
+- [**JSON API**](./integrations/#json-api) - Statuspage.io-compatible JSON endpoint
+- [**Status Badge**](./integrations/#status-badge) - Embeddable SVG badge for your README
 
-See the [Integrations](/status-pages/integrations/) page for detailed documentation.
+See the [Integrations](./integrations/) page for detailed documentation.
 
 ## Next Steps
 
-- [Integrations](/status-pages/integrations/) - RSS, JSON API, and status badges
-- [Alerts](/alerts/) - Configure how you receive notifications
+- [Integrations](./integrations/) - RSS, JSON API, and status badges
+- [Alerts](../alerts/) - Configure how you receive notifications

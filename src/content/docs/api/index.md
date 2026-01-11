@@ -73,5 +73,5 @@ Errors return JSON with `error` field:
 
 ## Next Steps
 
-- [Ping Endpoint](/api/ping/) - Sending pings via HTTP
-- [Check Endpoints](/api/checks/) - Managing checks via API
+- [Ping Endpoint](./ping/) - Sending pings via HTTP
+- [Check Endpoints](./checks/) - Managing checks via API

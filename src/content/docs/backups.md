@@ -26,7 +26,7 @@ Or source from a file:
 0 3 * * * . ~/.pakyas_env && pakyas monitor pg-backup -- pg_dump mydb > /backups/mydb.sql
 ```
 
-See [Environment Variables](/config/env-vars/) for all options.
+See [Environment Variables](./config/env-vars/) for all options.
 
 ## When to use this
 
