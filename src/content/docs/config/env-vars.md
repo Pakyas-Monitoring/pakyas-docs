@@ -9,7 +9,8 @@ Pakyas follows the standard [12-factor app](https://12factor.net/config) configu
 
 | Variable | Description |
 |----------|-------------|
-| `PAKYAS_API_KEY` | **Required.** Your API Key (`pk_live_...` or `pk_test_...`). |
+| `PAKYAS_API_KEY` | Your API Key (`pk_live_...` or `pk_test_...`). Required unless using `--public_id`. |
+| `PAKYAS_PUBLIC_ID` | Check UUID for `--public_id` flag. No authentication required when using this. |
 | `PAKYAS_ORG` | (Optional) Organization slug or ID to scope checks to. |
 | `PAKYAS_PROJECT` | (Optional) Project slug or ID to scope checks to. |
 

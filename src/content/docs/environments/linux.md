@@ -74,10 +74,16 @@ Cron runs with a minimal environment. Ensure `pakyas` is in the PATH or use the 
 Interactive login (`pakyas login`) stores credentials in the user's home directory (`~/.config/pakyas/`).
 If your cron job runs as `root` or another user, it won't have access to your token.
 
-**Solution:** Use the `PAKYAS_API_KEY` environment variable or flag.
+**Solution 1:** Use the `PAKYAS_API_KEY` environment variable.
 
 ```bash
 0 2 * * * PAKYAS_API_KEY=pk_live_... pakyas monitor db-backup -- /path/to/script
+```
+
+**Solution 2:** Use the check's public UUID with `--public_id` (no API key required).
+
+```bash
+0 2 * * * PAKYAS_PUBLIC_ID=550e8400-... pakyas monitor --public_id "$PAKYAS_PUBLIC_ID" -- /path/to/script
 ```
 
 ### Overlapping Jobs
