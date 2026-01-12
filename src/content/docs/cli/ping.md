@@ -34,6 +34,8 @@ pakyas ping backup-db --exit-code 1
 | `--start` | Send a start signal |
 | `--fail` | Send a fail signal |
 | `--exit-code <code>` | Send with specific exit code (0 = success) |
+| `--run <id>` | Run identifier for START/END pairing (for accurate duration tracking with overlapping runs) |
+| `--duration-ms <ms>` | Duration in milliseconds (for scripted pings with accurate timing) |
 | `--no-external` | Disable external monitors |
 | `--external-timeout-ms` | Timeout for external requests |
 
@@ -63,6 +65,24 @@ if some_condition; then
 else
   pakyas ping my-job --fail
 fi
+```
+
+### Scripted Pings with Accurate Duration
+
+For accurate duration tracking in scripts, measure and send the duration:
+
+```bash
+#!/bin/bash
+pakyas ping my-job --start
+START_TIME=$(date +%s%3N)  # milliseconds since epoch
+
+# Your job here
+./my-complex-job.sh
+
+END_TIME=$(date +%s%3N)
+DURATION=$((END_TIME - START_TIME))
+
+pakyas ping my-job --duration-ms $DURATION
 ```
 
 ## See Also

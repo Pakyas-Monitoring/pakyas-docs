@@ -64,6 +64,30 @@ curl -fsS https://ping.pakyas.com/ping/{public_id}/1
 | Response | 200 OK |
 | Path Parameter | Exit code (0-255) |
 
+## Duration Tracking
+
+For accurate duration measurement, send the measured time with your completion ping:
+
+**Header (recommended):**
+
+```bash
+curl -H "X-Pakyas-Duration: 1523" https://ping.pakyas.com/ping/{id}
+```
+
+**Query parameter:**
+
+```bash
+curl "https://ping.pakyas.com/ping/{id}?duration=1523"
+```
+
+The server uses this value if provided, otherwise calculates duration from start/end timestamps.
+
+**Notes:**
+- Duration is only accepted on completion pings (success/fail), not start pings
+- Must be a non-negative integer in milliseconds
+- Maximum: 7 days (604,800,000 ms)
+- Client-supplied duration is trusted; Pakyas does not verify it
+
 ## Request Body
 
 For POST requests, you can include a body with error details:
