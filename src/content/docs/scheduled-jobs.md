@@ -54,3 +54,41 @@ Pakyas wraps your command, sends a start signal, captures output, and reports su
 - Job exits non-zero
 - Job runs longer than expected
 - Job never reports back (missed schedule)
+
+## How schedules are evaluated
+
+Pakyas supports two schedule types, each with different behavior for computing when the next ping is expected.
+
+| Schedule Type | Next Expected Based On | Best For |
+|--------------|------------------------|----------|
+| **Interval** | Last success/fail + period | Heartbeat monitoring |
+| **Cron** | Next cron tick (wall-clock) | Fixed-time jobs |
+
+### Interval schedules
+
+Timer resets after each ping. If you set a 5-minute interval and your job finishes at 12:07, the next expected ping is 12:12.
+
+**Behavior:**
+- Next expected = last completion time + interval
+- Long-running jobs "shift" the schedule forward
+- Best for heartbeat-style monitoring where you care about time between check-ins
+
+**Example:** A health check that should run every 5 minutes. If it takes 2 minutes to run, the next check starts 5 minutes after the previous one finished.
+
+### Cron schedules
+
+Expected at fixed wall-clock times. If your cron is `*/5 * * * *` (every 5 minutes), Pakyas expects pings at :00, :05, :10, etc.—regardless of how long the previous job ran.
+
+**Behavior:**
+- Next expected = next scheduled time from cron expression
+- Long-running jobs become "Overrunning" instead of shifting the schedule
+- Best for jobs that must run at specific times (backups at midnight, reports at 9am)
+
+**Example:** A backup job scheduled at `0 2 * * *` (2am daily). If it takes 3 hours, the next expected is still 2am tomorrow—not 5am.
+
+### Overrunning detection
+
+For cron schedules, if a job is still running when the next scheduled time passes, Pakyas marks it as **Overrunning**. This is different from "Late" (which means no job started):
+
+- **Late/Missing**: Expected time passed and no ping was received (job didn't start)
+- **Overrunning**: Job started but is still running past the next scheduled time
