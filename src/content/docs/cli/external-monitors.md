@@ -52,7 +52,9 @@ monitor_key = "payment-sync"
 ### Configuration Structure
 
 - **Global settings** (`[targets.*]`) - Shared endpoints and API keys
-- **Per-check mappings** (`[checks."slug".targets.*]`) - Monitor IDs for each check
+- **Per-check mappings** (`[checks."key".targets.*]`) - Monitor IDs for each check, where `key` can be either:
+  - A check **slug** (e.g., `"backup-db"`) - used with `pakyas monitor backup-db`
+  - A check **public_id** (e.g., `"550e8400-e29b-41d4-a716-446655440000"`) - used with `pakyas monitor --public-id <UUID>`
 - Checks without configured IDs skip that external service
 
 ## CLI Flags
@@ -62,6 +64,42 @@ monitor_key = "payment-sync"
 | `--no-external` | `PAKYAS_NO_EXTERNAL` | Disable all external monitors |
 | `--migration-mode` | `PAKYAS_MIGRATION_MODE` | Allow external success to override Pakyas failure |
 | `--external-timeout-ms` | `PAKYAS_EXTERNAL_TIMEOUT_MS` | Timeout per request (default: 5000ms) |
+
+## Using with public_id (CI/CD)
+
+In CI/CD environments, you often use `--public-id` to avoid authentication requirements. External monitors fully support this mode - just use the public_id as the config key:
+
+```toml
+# External monitors config using public_id as the key
+[targets.healthchecks]
+endpoint = "https://hc-ping.com"
+
+# Use the public_id (UUID) as the key instead of slug
+[checks."550e8400-e29b-41d4-a716-446655440000".targets.healthchecks]
+uuid = "your-healthchecks-uuid"
+```
+
+Then in your CI/CD pipeline:
+
+```bash
+# The CLI will look up external monitors using the public_id
+pakyas monitor --public-id 550e8400-e29b-41d4-a716-446655440000 -- ./deploy.sh
+```
+
+This is useful when:
+- Your CI/CD environment doesn't have Pakyas authentication configured
+- You want to hardcode the check ID in your pipeline without needing project context
+- You're running in a minimal environment where only the public_id is available
+
+**Tip:** When you create a check with `pakyas check create`, the output shows both the slug and public_id monitor commands you can copy:
+
+```
+Monitor with:
+  pakyas monitor backup-db -- your-command
+
+CI/CD (no auth required):
+  pakyas monitor --public-id 550e8400-e29b-41d4-a716-446655440000 -- your-command
+```
 
 ## Understanding Migration Mode
 
@@ -275,7 +313,7 @@ url = "https://status.example.com/api/ping"
 
 # Webhook receives JSON payload:
 # {
-#   "check_slug": "backup-db",
+#   "check_identifier": "backup-db",  // slug or public_id depending on invocation
 #   "event_type": "success",  // or "start", "fail"
 #   "exit_code": 0,
 #   "duration_ms": 12345,
@@ -308,8 +346,11 @@ pakyas monitor --external-timeout-ms 10000 backup-nightly -- ./backup.sh
 ### External pings not being sent
 
 1. Check that `external_monitors.toml` exists at `~/.config/pakyas/external_monitors.toml`
-2. Verify the check slug matches exactly (case-sensitive)
-3. Ensure the per-check ID mapping exists (e.g., `[checks."your-slug".targets.healthchecks]`)
+2. Verify the config key matches exactly (case-sensitive):
+   - If using slug: `[checks."your-slug".targets.healthchecks]`
+   - If using public_id: `[checks."550e8400-e29b-41d4-a716-446655440000".targets.healthchecks]`
+3. Ensure the per-check ID mapping exists for your check
+4. Use `-v` (verbose) flag to see which config key is being used for lookup
 
 ### Getting exit code 3 unexpectedly
 
