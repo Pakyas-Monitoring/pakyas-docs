@@ -21,7 +21,7 @@
 
 **Plans:** 1 plan
 
-**Status:** Complete ✓
+**Status:** Complete
 
 Plans:
 - [x] 01-01-PLAN.md — Create auth.md and api-key.md documentation
@@ -44,6 +44,12 @@ Plans:
 
 **Requirements:** CMD-03, CMD-04, CMD-05, CMD-06
 
+**Plans:** 2 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Create check-doctor.md and check-tail.md documentation
+- [ ] 02-02-PLAN.md — Create check-inspect.md and completion.md documentation
+
 **Success Criteria:**
 1. User can find documentation for `pakyas check doctor` with all flags
 2. User can find documentation for `pakyas check tail` for streaming events
@@ -54,6 +60,7 @@ Plans:
 **Deliverables:**
 - `src/content/docs/cli/check-doctor.md` — Check diagnostics reference
 - `src/content/docs/cli/check-tail.md` — Event streaming reference
+- `src/content/docs/cli/check-inspect.md` — Check state inspection reference
 - `src/content/docs/cli/completion.md` — Shell completions guide
 
 ---
