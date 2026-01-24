@@ -19,6 +19,11 @@
 
 **Requirements:** CMD-01, CMD-02
 
+**Plans:** 1 plan
+
+Plans:
+- [ ] 01-01-PLAN.md — Create auth.md and api-key.md documentation
+
 **Success Criteria:**
 1. User can find documentation for `pakyas auth status` command
 2. User can find documentation for `pakyas auth key` subcommands (list, set, verify, rm)
