@@ -106,6 +106,12 @@ export default defineConfig({
                     label: "CLI Reference",
                     items: [
                         { label: "Installation", link: "/cli/" },
+                        { label: "api-key", link: "/cli/api-key/" },
+                        { label: "auth", link: "/cli/auth/" },
+                        { label: "check doctor", link: "/cli/check-doctor/" },
+                        { label: "check inspect", link: "/cli/check-inspect/" },
+                        { label: "check tail", link: "/cli/check-tail/" },
+                        { label: "completion", link: "/cli/completion/" },
                         { label: "monitor", link: "/cli/monitor/" },
                         { label: "ping", link: "/cli/ping/" },
                         { label: "update", link: "/cli/update/" },
