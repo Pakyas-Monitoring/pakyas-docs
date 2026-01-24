@@ -75,9 +75,11 @@ Plans:
 
 **Plans:** 2 plans
 
+**Status:** Complete
+
 Plans:
-- [ ] 03-01-PLAN.md — Update CLI index with global flags and command flag updates
-- [ ] 03-02-PLAN.md — Update environment variables and add sidebar navigation
+- [x] 03-01-PLAN.md — Update CLI index with global flags and command flag updates
+- [x] 03-02-PLAN.md — Update environment variables and add sidebar navigation
 
 **Success Criteria:**
 1. Global flags section includes --display-tz, --time, --no-color, --plain, --debug-http

@@ -36,6 +36,9 @@ See: .planning/PROJECT.md (updated 2026-01-24)
 - Document both PAKYAS_NO_COLOR and NO_COLOR (standard) as separate entries for clarity
 - Ordered CLI options table logically: paths, display, format, color, behavior, advanced
 - Maintained alphabetical sidebar order for commands with Installation first, External Monitors last
+- Added global flags as new section after Environment Variables for better discoverability
+- Included environment variable mappings in global flags table for cross-reference
+- Documented check delete with examples showing both interactive and non-interactive modes
 
 ### Blockers
 (None)
@@ -49,8 +52,8 @@ See: .planning/PROJECT.md (updated 2026-01-24)
 
 ## Session Continuity
 
-Last session: 2026-01-24T12:11:20Z
-Stopped at: Completed 03-02-PLAN.md
+Last session: 2026-01-24T12:11:47Z
+Stopped at: Completed 03-01-PLAN.md
 Resume file: None
 
 ---
