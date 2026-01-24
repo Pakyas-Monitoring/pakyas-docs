@@ -73,6 +73,12 @@ Plans:
 
 **Requirements:** UPD-01, UPD-02, UPD-03, UPD-04, NAV-01
 
+**Plans:** 2 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Update CLI index with global flags and command flag updates
+- [ ] 03-02-PLAN.md — Update environment variables and add sidebar navigation
+
 **Success Criteria:**
 1. Global flags section includes --display-tz, --time, --no-color, --plain, --debug-http
 2. Environment variables reference includes all new variables
