@@ -11,10 +11,10 @@ Requirements for CLI documentation sync. Each maps to roadmap phases.
 
 - [x] **CMD-01**: Document `auth` command with all subcommands (status, key list/set/verify/rm)
 - [x] **CMD-02**: Document `api-key` command with all subcommands (list, create, revoke)
-- [ ] **CMD-03**: Document `check doctor` command with --deep and --fail-on flags
-- [ ] **CMD-04**: Document `check tail` command with --since, --types, --follow flags
-- [ ] **CMD-05**: Document `check inspect` command for debugging
-- [ ] **CMD-06**: Document `completion` command for shell completions (bash/zsh/fish/powershell/elvish)
+- [x] **CMD-03**: Document `check doctor` command with --deep and --fail-on flags
+- [x] **CMD-04**: Document `check tail` command with --since, --types, --follow flags
+- [x] **CMD-05**: Document `check inspect` command for debugging
+- [x] **CMD-06**: Document `completion` command for shell completions (bash/zsh/fish/powershell/elvish)
 
 ### Documentation Updates
 
@@ -41,10 +41,10 @@ Requirements for CLI documentation sync. Each maps to roadmap phases.
 |-------------|-------|--------|
 | CMD-01 | Phase 1 | Complete |
 | CMD-02 | Phase 1 | Complete |
-| CMD-03 | Phase 2 | Pending |
-| CMD-04 | Phase 2 | Pending |
-| CMD-05 | Phase 2 | Pending |
-| CMD-06 | Phase 2 | Pending |
+| CMD-03 | Phase 2 | Complete |
+| CMD-04 | Phase 2 | Complete |
+| CMD-05 | Phase 2 | Complete |
+| CMD-06 | Phase 2 | Complete |
 | UPD-01 | Phase 3 | Pending |
 | UPD-02 | Phase 3 | Pending |
 | UPD-03 | Phase 3 | Pending |

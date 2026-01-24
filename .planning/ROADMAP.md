@@ -46,9 +46,11 @@ Plans:
 
 **Plans:** 2 plans
 
+**Status:** Complete
+
 Plans:
-- [ ] 02-01-PLAN.md — Create check-doctor.md and check-tail.md documentation
-- [ ] 02-02-PLAN.md — Create check-inspect.md and completion.md documentation
+- [x] 02-01-PLAN.md — Create check-doctor.md and check-tail.md documentation
+- [x] 02-02-PLAN.md — Create check-inspect.md and completion.md documentation
 
 **Success Criteria:**
 1. User can find documentation for `pakyas check doctor` with all flags

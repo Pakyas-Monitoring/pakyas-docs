@@ -4,10 +4,10 @@
 
 **Phase:** 2 of 3 (Check Command Docs)
 **Plan:** 2 of 2 in phase
-**Status:** Plan complete
-**Last activity:** 2026-01-24 - Completed 02-02-PLAN.md
+**Status:** Phase complete
+**Last activity:** 2026-01-24 — Completed Phase 2
 
-Progress: [######----] 60%
+Progress: [######----] 66%
 
 ## Project Reference
 
@@ -21,7 +21,7 @@ See: .planning/PROJECT.md (updated 2026-01-24)
 | Phase | Name | Status | Progress |
 |-------|------|--------|----------|
 | 1 | Auth & API Key Docs | Complete | 100% |
-| 2 | Check Command Docs | In Progress | 50% |
+| 2 | Check Command Docs | Complete | 100% |
 | 3 | Updates & Navigation | Pending | 0% |
 
 ## Accumulated Context
