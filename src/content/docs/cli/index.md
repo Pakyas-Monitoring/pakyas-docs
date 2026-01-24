@@ -80,6 +80,23 @@ The CLI stores configuration in `~/.config/pakyas/`:
 | `PAKYAS_PROJECT` | Override active project |
 | `PAKYAS_API_KEY` | API key for authentication |
 
+## Global Flags
+
+These flags can be used with any pakyas command:
+
+| Flag | Default | Env Var | Description |
+|------|---------|---------|-------------|
+| `--display-tz <TZ>` | `local` | `PAKYAS_DISPLAY_TZ` | Timezone for timestamps: `local` or `utc` |
+| `--time <MODE>` | `both` | `PAKYAS_TIME` | Time display: `relative`, `absolute`, or `both` |
+| `--no-color` | off | `NO_COLOR` | Disable colored output |
+| `--plain` | off | - | Plain output without symbols/emojis |
+| `--debug-http` | off | - | Print HTTP requests/responses to stderr |
+| `--format <FMT>` | `table` | `PAKYAS_FORMAT` | Output format: `table`, `json`, `ndjson`, `yaml` |
+
+:::tip[Persistent Configuration]
+Flags can also be set via environment variables for persistent configuration across all commands.
+:::
+
 ## Commands
 
 ### Organization Management
