@@ -94,7 +94,7 @@ These flags can be used with any pakyas command:
 | `--format <FMT>` | `table` | `PAKYAS_FORMAT` | Output format: `table`, `json`, `ndjson`, `yaml` |
 
 :::tip[Persistent Configuration]
-Flags can also be set via environment variables for persistent configuration across all commands.
+Flags can also be set via environment variables for persistent configuration across all commands. See the [Environment Variables](/config/env-vars/) reference for the complete list.
 :::
 
 ## Commands
