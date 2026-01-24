@@ -163,8 +163,19 @@ pakyas check update backup-nightly --cron "0 3 * * *" --tz Asia/Manila
 pakyas check pause backup-nightly
 pakyas check resume backup-nightly
 
-# View ping history
-pakyas check logs backup-nightly --limit 50
+# Delete a check (prompts for confirmation)
+pakyas check delete my-check
+
+# Delete without confirmation (use in scripts)
+pakyas check delete my-check -y
+pakyas check delete my-check --yes
+
+# View ping history (default: 50 entries)
+pakyas check logs backup-nightly
+
+# Limit to specific number of entries
+pakyas check logs backup-nightly --limit 100
+pakyas check logs backup-nightly --limit 10
 ```
 
 #### Duration Formats
