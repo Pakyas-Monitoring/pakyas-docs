@@ -21,8 +21,10 @@
 
 **Plans:** 1 plan
 
+**Status:** Complete ✓
+
 Plans:
-- [ ] 01-01-PLAN.md — Create auth.md and api-key.md documentation
+- [x] 01-01-PLAN.md — Create auth.md and api-key.md documentation
 
 **Success Criteria:**
 1. User can find documentation for `pakyas auth status` command
