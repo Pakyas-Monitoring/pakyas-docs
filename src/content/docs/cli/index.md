@@ -239,6 +239,12 @@ Exit code 3 indicates Pakyas itself failed (network error, auth issue, etc.). Th
 
 ## Next Steps
 
+- [auth command](./auth/) - Manage authentication and stored credentials
+- [api-key command](./api-key/) - Create and manage API keys
+- [check doctor](./check-doctor/) - Diagnose check configuration issues
+- [check inspect](./check-inspect/) - View detailed check state
+- [check tail](./check-tail/) - Stream check events in real-time
+- [completion command](./completion/) - Shell completion setup
 - [monitor command](./monitor/) - Detailed monitor usage
 - [ping command](./ping/) - Manual ping sending
 - [update command](./update/) - Self-update the CLI
