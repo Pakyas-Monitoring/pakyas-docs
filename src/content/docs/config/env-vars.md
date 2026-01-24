@@ -21,7 +21,12 @@ These variables affect the behavior of the `pakyas` CLI.
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `PAKYAS_CONFIG_DIR` | `~/.config/pakyas` | Location of local config files. |
-| `PAKYAS_NO_COLOR` | `false` | Disable colored output. |
+| `PAKYAS_DISPLAY_TZ` | `local` | Timezone for timestamp display: `local` or `utc`. |
+| `PAKYAS_TIME` | `both` | Time display mode: `relative`, `absolute`, or `both`. |
+| `PAKYAS_FORMAT` | `table` | Output format: `table`, `json`, `ndjson`, or `yaml`. |
+| `PAKYAS_NO_COLOR` | `false` | Disable colored output. Also supports standard `NO_COLOR` env var. |
+| `NO_COLOR` | `false` | Disable colored output (standard env var). |
+| `PAKYAS_NO_UPDATE_CHECK` | `false` | Disable automatic update checks. |
 | `PAKYAS_API_URL` | `https://api.pakyas.com` | (Self-hosted only) API endpoint. |
 
 ## Example `.env`
@@ -30,4 +35,7 @@ These variables affect the behavior of the `pakyas` CLI.
 # .env.example
 PAKYAS_API_KEY=pk_live_xxxxx
 PAKYAS_PROJECT=production
+PAKYAS_FORMAT=json
+PAKYAS_TIME=relative
+NO_COLOR=1
 ```
