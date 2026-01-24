@@ -18,14 +18,14 @@ Requirements for CLI documentation sync. Each maps to roadmap phases.
 
 ### Documentation Updates
 
-- [ ] **UPD-01**: Update global flags section with --display-tz, --time, --no-color, --plain, --debug-http
-- [ ] **UPD-02**: Update environment variables reference with PAKYAS_DISPLAY_TZ, PAKYAS_TIME, NO_COLOR, etc.
-- [ ] **UPD-03**: Update `check delete` documentation with -y/--yes flag
-- [ ] **UPD-04**: Update `check logs` documentation with --limit flag details
+- [x] **UPD-01**: Update global flags section with --display-tz, --time, --no-color, --plain, --debug-http
+- [x] **UPD-02**: Update environment variables reference with PAKYAS_DISPLAY_TZ, PAKYAS_TIME, NO_COLOR, etc.
+- [x] **UPD-03**: Update `check delete` documentation with -y/--yes flag
+- [x] **UPD-04**: Update `check logs` documentation with --limit flag details
 
 ### Navigation
 
-- [ ] **NAV-01**: Add new command pages to sidebar navigation in astro.config.mjs
+- [x] **NAV-01**: Add new command pages to sidebar navigation in astro.config.mjs
 
 ## Out of Scope
 
@@ -45,11 +45,11 @@ Requirements for CLI documentation sync. Each maps to roadmap phases.
 | CMD-04 | Phase 2 | Complete |
 | CMD-05 | Phase 2 | Complete |
 | CMD-06 | Phase 2 | Complete |
-| UPD-01 | Phase 3 | Pending |
-| UPD-02 | Phase 3 | Pending |
-| UPD-03 | Phase 3 | Pending |
-| UPD-04 | Phase 3 | Pending |
-| NAV-01 | Phase 3 | Pending |
+| UPD-01 | Phase 3 | Complete |
+| UPD-02 | Phase 3 | Complete |
+| UPD-03 | Phase 3 | Complete |
+| UPD-04 | Phase 3 | Complete |
+| NAV-01 | Phase 3 | Complete |
 
 **Coverage:**
 - v1 requirements: 11 total
@@ -58,4 +58,4 @@ Requirements for CLI documentation sync. Each maps to roadmap phases.
 
 ---
 *Requirements defined: 2026-01-24*
-*Last updated: 2026-01-24 after initial definition*
+*Last updated: 2026-01-24 — Phase 3 complete*
