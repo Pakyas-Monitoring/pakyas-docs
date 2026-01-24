@@ -2,12 +2,12 @@
 
 ## Current Position
 
-**Phase:** 2 of 3 (Check Command Docs)
+**Phase:** 3 of 3 (Updates & Navigation)
 **Plan:** 2 of 2 in phase
 **Status:** Phase complete
-**Last activity:** 2026-01-24 — Completed Phase 2
+**Last activity:** 2026-01-24 — Completed Phase 3
 
-Progress: [######----] 66%
+Progress: [##########] 100%
 
 ## Project Reference
 
@@ -22,7 +22,7 @@ See: .planning/PROJECT.md (updated 2026-01-24)
 |-------|------|--------|----------|
 | 1 | Auth & API Key Docs | Complete | 100% |
 | 2 | Check Command Docs | Complete | 100% |
-| 3 | Updates & Navigation | Pending | 0% |
+| 3 | Updates & Navigation | Complete | 100% |
 
 ## Accumulated Context
 
@@ -33,6 +33,9 @@ See: .planning/PROJECT.md (updated 2026-01-24)
 - Use note callout in api-key.md to differentiate from auth key command
 - Differentiate inspect vs doctor with note callout (what IS vs what's WRONG)
 - Use tip callout for Fish shell's automatic completion loading
+- Document both PAKYAS_NO_COLOR and NO_COLOR (standard) as separate entries for clarity
+- Ordered CLI options table logically: paths, display, format, color, behavior, advanced
+- Maintained alphabetical sidebar order for commands with Installation first, External Monitors last
 
 ### Blockers
 (None)
@@ -40,13 +43,14 @@ See: .planning/PROJECT.md (updated 2026-01-24)
 ### Notes
 - CLI source at ~/projects/pakyas/pakyas-cli
 - Codebase already mapped in .planning/codebase/
-- auth.md and api-key.md ready for sidebar integration in Phase 3
-- All Phase 2 docs now created: check-doctor, check-tail, check-inspect, completion
+- All CLI documentation complete: 10 command pages + environment variables reference
+- Full sidebar navigation integrated for all CLI commands
+- Documentation now accurately reflects all CLI capabilities
 
 ## Session Continuity
 
-Last session: 2026-01-24T11:40:37Z
-Stopped at: Completed 02-02-PLAN.md
+Last session: 2026-01-24T12:11:20Z
+Stopped at: Completed 03-02-PLAN.md
 Resume file: None
 
 ---
