@@ -15,9 +15,54 @@ When using `pakyas monitor` or `pakyas ping`, you can configure the CLI to simul
 
 This lets you run both systems in parallel during migration, ensuring no gaps in coverage.
 
+## Inline CLI Arguments
+
+For quick setups or CI/CD environments, you can specify external monitors directly on the command line without creating a config file:
+
+```bash
+# With healthchecks.io
+pakyas monitor backup-db --healthchecks-id abc123 -- ./backup.sh
+
+# With Cronitor (API key from environment or flag)
+CRONITOR_API_KEY=xxx pakyas monitor backup-db --cronitor-key my-monitor -- ./backup.sh
+
+# Or with API key as flag
+pakyas monitor backup-db --cronitor-key my-monitor --cronitor-api-key xxx -- ./backup.sh
+
+# With webhook
+pakyas monitor backup-db --webhook-url https://my-server.com/hook -- ./backup.sh
+
+# Multiple external monitors at once
+pakyas monitor backup-db \
+    --healthchecks-id abc123 \
+    --cronitor-key my-monitor --cronitor-api-key xxx \
+    --webhook-url https://hook1.example.com \
+    --webhook-url https://hook2.example.com \
+    -- ./backup.sh
+
+# Self-hosted healthchecks.io
+pakyas monitor backup-db \
+    --healthchecks-id abc123 \
+    --healthchecks-endpoint https://hc.internal.example.com \
+    -- ./backup.sh
+```
+
+### Inline CLI Flags
+
+| Flag | Environment Variable | Description |
+|------|---------------------|-------------|
+| `--healthchecks-id <uuid>` | `PAKYAS_HEALTHCHECKS_ID` | healthchecks.io check UUID |
+| `--healthchecks-endpoint <url>` | `HEALTHCHECKS_ENDPOINT` | Custom endpoint (default: https://hc-ping.com) |
+| `--cronitor-key <key>` | `PAKYAS_CRONITOR_KEY` | Cronitor monitor key |
+| `--cronitor-api-key <key>` | `CRONITOR_API_KEY` | Cronitor API key |
+| `--cronitor-endpoint <url>` | - | Custom endpoint (default: https://cronitor.link) |
+| `--webhook-url <url>` | - | Webhook URL (can be repeated) |
+
+**Note:** CLI monitors are merged additively with config file monitors. This means you can define common monitors in your config file and add one-off monitors via CLI arguments.
+
 ## Configuration File
 
-Create `~/.config/pakyas/external_monitors.toml`:
+For more complex setups with multiple checks, use a config file. Create `~/.config/pakyas/external_monitors.toml`:
 
 ```toml
 # Migration mode (optional)
@@ -371,10 +416,23 @@ If all monitors fail, you still get exit code 3.
 
 ## Environment Variables
 
+### General Settings
+
 | Variable | Description |
 |----------|-------------|
 | `PAKYAS_NO_EXTERNAL` | Disable all external monitors |
 | `PAKYAS_MIGRATION_MODE` | Enable migration mode (lenient failures) |
 | `PAKYAS_EXTERNAL_TIMEOUT_MS` | Timeout per external request (default: 5000) |
 
-Note: Per-check IDs (healthchecks uuid, cronitor monitor_key) must be in the config file - environment variables are for shared settings only.
+### Inline External Monitor Settings
+
+These environment variables can be used instead of CLI flags for inline external monitor configuration:
+
+| Variable | Description |
+|----------|-------------|
+| `PAKYAS_HEALTHCHECKS_ID` | healthchecks.io check UUID |
+| `HEALTHCHECKS_ENDPOINT` | Custom healthchecks.io endpoint |
+| `PAKYAS_CRONITOR_KEY` | Cronitor monitor key |
+| `CRONITOR_API_KEY` | Cronitor API key |
+
+**Note:** With inline CLI arguments or environment variables, you no longer need a config file for simple setups. Config files are still useful for managing multiple checks with different external monitor mappings.
