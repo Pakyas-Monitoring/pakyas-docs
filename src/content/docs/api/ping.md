@@ -8,7 +8,7 @@ The ping endpoint accepts heartbeat signals from your jobs.
 ## Base URL
 
 ```
-https://ping.pakyas.com/ping/{public_id}
+https://ping.pakyas.com/{public_id}
 ```
 
 The `public_id` is the unique identifier for your check, shown in the dashboard.
@@ -20,7 +20,7 @@ The `public_id` is the unique identifier for your check, shown in the dashboard.
 Signal that a job completed successfully.
 
 ```bash
-curl -fsS https://ping.pakyas.com/ping/{public_id}
+curl -fsS https://ping.pakyas.com/{public_id}
 ```
 
 | Method | GET or POST |
@@ -32,7 +32,7 @@ curl -fsS https://ping.pakyas.com/ping/{public_id}
 Signal that a job has started.
 
 ```bash
-curl -fsS https://ping.pakyas.com/ping/{public_id}/start
+curl -fsS https://ping.pakyas.com/{public_id}/start
 ```
 
 | Method | GET or POST |
@@ -44,7 +44,7 @@ curl -fsS https://ping.pakyas.com/ping/{public_id}/start
 Signal that a job has failed.
 
 ```bash
-curl -fsS https://ping.pakyas.com/ping/{public_id}/fail
+curl -fsS https://ping.pakyas.com/{public_id}/fail
 ```
 
 | Method | GET or POST |
@@ -56,7 +56,7 @@ curl -fsS https://ping.pakyas.com/ping/{public_id}/fail
 Signal completion with a specific exit code. Non-zero is treated as failure.
 
 ```bash
-curl -fsS https://ping.pakyas.com/ping/{public_id}/1
+curl -fsS https://ping.pakyas.com/{public_id}/1
 ```
 
 | Method | GET or POST |
@@ -71,13 +71,13 @@ For accurate duration measurement, send the measured time with your completion p
 **Header (recommended):**
 
 ```bash
-curl -H "X-Pakyas-Duration: 1523" https://ping.pakyas.com/ping/{id}
+curl -H "X-Pakyas-Duration: 1523" https://ping.pakyas.com/{id}
 ```
 
 **Query parameter:**
 
 ```bash
-curl "https://ping.pakyas.com/ping/{id}?duration=1523"
+curl "https://ping.pakyas.com/{id}?duration=1523"
 ```
 
 The server uses this value if provided, otherwise calculates duration from start/end timestamps.
@@ -93,7 +93,7 @@ The server uses this value if provided, otherwise calculates duration from start
 For POST requests, you can include a body with error details:
 
 ```bash
-curl -X POST https://ping.pakyas.com/ping/{public_id}/fail \
+curl -X POST https://ping.pakyas.com/{public_id}/fail \
   -H "Content-Type: text/plain" \
   -d "Error: Connection refused to database"
 ```
@@ -114,22 +114,22 @@ The body is stored and included in alerts. Maximum size: 10KB.
 
 ```bash
 # Simple success ping
-0 * * * * /path/to/job.sh && curl -fsS https://ping.pakyas.com/ping/{id}
+0 * * * * /path/to/job.sh && curl -fsS https://ping.pakyas.com/{id}
 
 # With start/success/fail
-0 * * * * curl -fsS https://ping.pakyas.com/ping/{id}/start && /path/to/job.sh && curl -fsS https://ping.pakyas.com/ping/{id} || curl -fsS https://ping.pakyas.com/ping/{id}/fail
+0 * * * * curl -fsS https://ping.pakyas.com/{id}/start && /path/to/job.sh && curl -fsS https://ping.pakyas.com/{id} || curl -fsS https://ping.pakyas.com/{id}/fail
 ```
 
 ### From Script
 
 ```bash
 #!/bin/bash
-curl -fsS https://ping.pakyas.com/ping/{id}/start
+curl -fsS https://ping.pakyas.com/{id}/start
 
 if ./my-job.sh 2>&1 | tee /tmp/output.log; then
-  curl -fsS https://ping.pakyas.com/ping/{id}
+  curl -fsS https://ping.pakyas.com/{id}
 else
-  curl -fsS https://ping.pakyas.com/ping/{id}/fail -d @/tmp/output.log
+  curl -fsS https://ping.pakyas.com/{id}/fail -d @/tmp/output.log
 fi
 ```
 
@@ -139,11 +139,11 @@ fi
 import requests
 
 def ping_success(check_id):
-    requests.get(f"https://ping.pakyas.com/ping/{check_id}")
+    requests.get(f"https://ping.pakyas.com/{check_id}")
 
 def ping_fail(check_id, error_message):
     requests.post(
-        f"https://ping.pakyas.com/ping/{check_id}/fail",
+        f"https://ping.pakyas.com/{check_id}/fail",
         data=error_message
     )
 ```
